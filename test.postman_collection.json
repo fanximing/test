@@ -1,0 +1,254 @@
+{
+	"info": {
+		"_postman_id": "289aefd1-0b6e-476b-baca-b84ffe29fe28",
+		"name": "test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22108717"
+	},
+	"item": [
+		{
+			"name": "搜索",
+			"item": [
+				{
+					"name": "获取默认搜索词",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url123}}/long/search/default?mid={{mid}}&m2={{m2}}&channel=1",
+							"host": [
+								"{{url123}}"
+							],
+							"path": [
+								"long",
+								"search",
+								"default"
+							],
+							"query": [
+								{
+									"key": "mid",
+									"value": "{{mid}}"
+								},
+								{
+									"key": "m2",
+									"value": "{{m2}}"
+								},
+								{
+									"key": "channel",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "搜索SUG",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url123}}/long/search/sug?mid={{mid}}&m2={{m2}}&channel=1&key_word=误杀",
+							"host": [
+								"{{url123}}"
+							],
+							"path": [
+								"long",
+								"search",
+								"sug"
+							],
+							"query": [
+								{
+									"key": "mid",
+									"value": "{{mid}}"
+								},
+								{
+									"key": "m2",
+									"value": "{{m2}}"
+								},
+								{
+									"key": "channel",
+									"value": "1"
+								},
+								{
+									"key": "key_word",
+									"value": "误杀"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "视频列表和标签列表",
+			"item": [
+				{
+					"name": "类型列表",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url123}}/long/category/list",
+							"host": [
+								"{{url123}}"
+							],
+							"path": [
+								"long",
+								"category",
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "标签列表",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url123}}/long/tags/list?mid={{mid}}&m2={{m2}}&category=4",
+							"host": [
+								"{{url123}}"
+							],
+							"path": [
+								"long",
+								"tags",
+								"list"
+							],
+							"query": [
+								{
+									"key": "mid",
+									"value": "{{mid}}"
+								},
+								{
+									"key": "m2",
+									"value": "{{m2}}"
+								},
+								{
+									"key": "category",
+									"value": "4"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "同步视频的播放时间->历史和收藏的观看时间",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"video_id\":15003,\"video_item\":\"1\",\"duration\":3004}"
+						},
+						"url": {
+							"raw": "{{url123}}/long/video/play_duration_sync?mid={{mid}}&m2={{m2}}",
+							"host": [
+								"{{url123}}"
+							],
+							"path": [
+								"long",
+								"video",
+								"play_duration_sync"
+							],
+							"query": [
+								{
+									"key": "mid",
+									"value": "{{mid}}"
+								},
+								{
+									"key": "m2",
+									"value": "{{m2}}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "收藏和历史",
+			"item": [
+				{
+					"name": "收藏记录",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url123}}/long/favorite/list?category=3&page=1&size=10&mid={{mid}}&m2={{m2}}",
+							"host": [
+								"{{url123}}"
+							],
+							"path": [
+								"long",
+								"favorite",
+								"list"
+							],
+							"query": [
+								{
+									"key": "category",
+									"value": "3"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "size",
+									"value": "10"
+								},
+								{
+									"key": "mid",
+									"value": "{{mid}}"
+								},
+								{
+									"key": "m2",
+									"value": "{{m2}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "清空我的历史",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"video_item\": \"2022-06-22期\", \r\n \r\n\"video_id\": 127092 \r\n \r\n}"
+						},
+						"url": {
+							"raw": "{{url123}}/long/favorite/clear?mid={{mid}}&m2={{m2}}",
+							"host": [
+								"{{url123}}"
+							],
+							"path": [
+								"long",
+								"favorite",
+								"clear"
+							],
+							"query": [
+								{
+									"key": "mid",
+									"value": "{{mid}}"
+								},
+								{
+									"key": "m2",
+									"value": "{{m2}}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
